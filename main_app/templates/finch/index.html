@@ -3,10 +3,9 @@
 
 <h1>Finch List</h1>
 
-{% for f in finch %}
 <div class="card">
   <!-- Add this single line below -->
-  <a href="/finch/{{ f.id }}">
+  <a href="{% url 'detail' f.id %}">
     <div class="card-content">
       <span class="card-title">{{ f.name }}</span>
       <p>Breed: {{ f.breed }}</p>
@@ -15,6 +14,5 @@
   <!-- Add the following one as well -->
   </a>
 </div>
-{% endfor %}
 
 {% endblock %}
