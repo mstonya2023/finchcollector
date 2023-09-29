@@ -3,6 +3,7 @@
 
 <h1>Finch List</h1>
 
+{% for f in finches %}
 <div class="card">
   <!-- Add this single line below -->
   <a href="{% url 'detail' f.id %}">
@@ -10,9 +11,10 @@
       <span class="card-title">{{ f.name }}</span>
       <p>Breed: {{ f.breed }}</p>
       <p>Description: {{ f.description|linebreaks }}</p>
+      <p>Age: {{ f.age }}</p>
     </div>
   <!-- Add the following one as well -->
   </a>
 </div>
-
+{% endfor %}
 {% endblock %}
